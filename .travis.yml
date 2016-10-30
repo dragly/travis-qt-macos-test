@@ -1,12 +1,21 @@
 language: cpp
 os:
     - osx
+    - linux
 compiler:
     - gcc
-before_install:
-    - brew update
-    - brew install qt5
-    - brew link --force qt5
+matrix:
+    include:
+        - os: osx
+          before_install:
+              - brew update
+              - brew install qt5
+              - brew link --force qt5
+        - os: linux
+          sudo: required
+          before_install:
+              - sudo apt-get -qq update
+              - sudo apt-get -qq install qt5-default
 install:
     - qmake
     - make
