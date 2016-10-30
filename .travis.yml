@@ -6,8 +6,10 @@ compiler:
 before_install:
     - brew update
     - brew install qt5
+    - brew link --force qt5
 install:
     - qmake
     - make
 script:
     - echo "Finished"
+p
