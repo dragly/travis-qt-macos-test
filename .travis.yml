@@ -1,0 +1,14 @@
+language: cpp
+os:
+    - osx
+compiler:
+    - gcc
+before_install:
+    - brew update
+    - brew install qt5
+install:
+    - which qmake
+    - qmake
+    - make
+script:
+    - echo "Finished"
