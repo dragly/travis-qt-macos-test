@@ -12,4 +12,3 @@ install:
     - make
 script:
     - echo "Finished"
-p
